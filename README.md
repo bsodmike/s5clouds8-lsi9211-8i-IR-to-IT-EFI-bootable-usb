@@ -30,13 +30,26 @@ The zip files mentioned above are included in the root of this repo for archival
 
 ### Disabling Secure Boot (in Asus UEFI)
 
+In the `Boot` tab, scroll down to `Secure Boot` and choose 'Other OS' as the selection.  You will need to save and reboot to ensure this persists.  This same view will let you verify that keys are _unloaded_.
+
+You do not need to wipe your Secure Boot keys; if you do, make sure to make a backup first.
+
 ### Booting the drive (in Asus UEFI)
 
+In Asus UEFI,  going to `Exit > Launch EFI Shell from USB devices` would not work (for me, YMMV); instead it would keep presenting a warning regarding Secure Boot.
 
-4GB USB2 stick, formatted in linux with fdisk with a 500MB primary partition, made active (bootable); then formatted mkfs.vfat as FAT16. The EFI shell was then copied over to /efi/boot/bootX64.efi.
+Instead, head to the `Boot` tab in the UEFI and locate a bootable entry starting with `UEFI: ....` that matches the capacity of your media.  In my case, this was a Sony USB drive.
 
+Since Secure Boot was already disabled, this booted into the EFI shell straight away.
 
+## Flashing the LSI HBA Card to IT-mode
 
+- Erase controller flash memory: `sas2flash.efi -o -e 6` DO NOT REBOOT!!
+
+- Write new firmware and BIOS to card: `sas2flash.efi -o -f 2118it.bin -b mptsas2.rom.`
+- Make sure to verify before rebooting: `sas2flash.efi -listall`
+
+Reboot and hit `Ctrl-C` to verify the new firmware in IT mode has persisted.
 
 ## Hardware Used (as a baseline)
 
