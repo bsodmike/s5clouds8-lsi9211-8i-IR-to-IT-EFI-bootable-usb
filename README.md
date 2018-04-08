@@ -51,9 +51,13 @@ The zip files mentioned above are included in the root of this repo for archival
 
 This repo is a result of [posting my findings in a thread](https://forum.level1techs.com/t/asus-uefi-friendly-efi-usb-no-luck-flashing-lsi9211-8i-hba-from-ir-to-it/126344/6) on the Level1Tech's forum.  Feel free to share your findings there.
 
+Much thanks to [Whizdumb](https://forum.level1techs.com/u/Whizdumb) for pointing me in the right direction with crucial info about using USB2 drives.
+
 ### References
 
 - https://forums.freenas.org/index.php?threads/how-to-flash-lsi-9211-8i-using-efi-shell.50902/
 - https://forums.servethehome.com/index.php?threads/tutorial-updating-ibm-m1015-lsi-9211-8i-firmware-on-uefi-systems.11462/
 
 ## License
+
+This project is licensed under the terms of the MIT License.
