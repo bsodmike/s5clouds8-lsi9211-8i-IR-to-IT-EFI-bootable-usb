@@ -8,7 +8,7 @@ The following 'spec' has been confirmed to work
 
 Format as follows, use `lsblk -f` and `fdisk -l` to locate the correct device and replace `/dev/sdX` below
 
-- Wipe the drive with `dd if=/dev/null of=/dev/sdX bs=16k status=progress`
+- Wipe the drive with `dd if=/dev/zero of=/dev/sdX bs=16k status=progress`
 - `fdisk /dev/sdX`
   - Select `o` to create new empty DOS partition table.
   - `n` and choose to create a primary partition, where the last sector is `+500M`.
